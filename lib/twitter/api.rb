@@ -1,6 +1,7 @@
 require 'twitter/connection'
 require 'twitter/request'
 require 'twitter/authentication'
+require "twitter/ratelimit_status"
 
 module Twitter
   # @private
@@ -19,5 +20,6 @@ module Twitter
     include Connection
     include Request
     include Authentication
+    include RatelimitStatus
   end
 end

@@ -34,6 +34,7 @@ module Twitter
           request.body = options unless options.empty?
         end
       end
+      update_ratelimit_status(response)
       raw ? response : response.body
     end
 
