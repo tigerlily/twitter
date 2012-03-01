@@ -22,6 +22,11 @@ module Twitter
         format.to_s.downcase == 'xml' ? response['direct_messages'] : response
       end
 
+      def direct_message(id, options={})
+        response = get("direct_messages/show/#{id}", options)
+        format.to_s.downcase == 'xml' ? response['direct_message'] : response
+      end
+
       # Returns the 20 most recent direct messages sent by the authenticating user
       #
       # @format :json, :xml
